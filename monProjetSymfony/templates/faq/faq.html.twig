@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class='container mt-md-5 mb-md-5 p-4 bg-white'> 
+				<div class='text-center mb-md-5'>
+					<h2 class='h2 mb-md-3'>FAQ - Foire Aux questions </h2>
+					<p class='font-weight-bold'>Retrouvez ici la plupart des questions posées</p>	
+				</div>
+				<div id='faq-container' class='container text-left'>
+					<div>
+						<h3 class='h3 mb-3'> Je cherche un voyage, comment dois-je procéder?</h3>
+						<p>Première chose à faire : utilisez notre moteur de recherche et entrez le titre ou les mots clés correspondant à votre recherche, puis cliquez sur le bouton 'Rechercher' et la liste des Voyages correspondant à cette recherche sera affichée. <a href='#'>advanced search page</a> . </p>
+					</div>
+					<div>
+						<h3 class='h3 mb-3'>Qui valide les Voyages?</h3>
+						<p>C’est l’équipe qui valide. Eh bien, nous n’avons pas le temps de les tester tous, bien sûr, mais juste pour juger de leur cohérence, pour les remettre un peu en forme et parfois pour corriger un peu l’orthographe. De plus, nous vérifions que le voyage  n’est pas déjà dans la base de données. </p>
+					</div>
+					<div>
+						<h3 class='h3 mb-3'>Je t’ai envoyé une question, mais je n’ai pas eu de réponse...</h3>
+						<p>Nous sommes parfois surchargés de travail, si vous avez besoin d’une réponse rapide, posez votre question sur le <a href='index.php?module=contact&action=contact_page'>contact page</a>.</p>
+					</div>
+					<div>
+						<h3 class='h3 mb-3'>Comment contacter l’équipe WhereToGo ?</h3>
+						<p>Vous pouvez contacter l’équipe très simplement en cliquant sur ce <a href='index.php?module=contact&action=contact_page'>lien</a>. Si vous rencontrez un bogue, veuillez nous donner autant de détails que possible !</p>
+					</div>
+				</div>
+			</div>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class='container mt-md-5 mb-md-5 p-4 bg-white'> 
+
+	<article class="blog-post">
+	<h2 class="blog-post-title">{{voyage.titre}}</h2>
+
+  <p class="blog-post-meta">Ecrit le {{voyage.createdAt|date("d/m/Y") }}, par {{voyage.idUtilisateur}} </a></p>
+			<ul>
+				<li>Lieu :
+					{{voyage.ville}},
+					{{voyage.pays}}
+				</li>
+				<li>Durée :
+					{{voyage.duree}}</li>
+				<li>Du
+					{{voyage.dateDebutVoyage|date("d/m/Y")}}
+					au
+					{{voyage.dateFinVoyage|date("d/m/Y")}}</li>
+				<li>Coût :
+					{{voyage.cout}}
+					€</li>
+			</ul>
+		
+		<div class="content">
+			<p>{{voyage.description}}</p>
+		</div>
+		<section class="comments">
+		<h2>{{voyage.comments | length }} commentaires</h2>
+			{% for comment in voyage.comments %}
+			<div class="comment">
+				<div class="row">
+					<div class="col-3">
+						{{comment.author}} (<small>{{comment.createdAt|date('d/m/Y à H:i')}}</small>)
+					</div>
+					<div class="col">
+					{{comment.content}}
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+
+			{% if app.user %}
+			{{ form_start(commentForm)}}
+			<label for="">Votre nom</label>
+			{{form_widget(commentForm.author, { 'attr' : {'placeholder': "nom prenom" }}  )}}
+			<label for="">Votre message</label>
+			{{form_widget(commentForm.content,  { 'attr' : {'placeholder': "message.." }} )}}
+
+			<button type="submit" class="btn btn-primary">Commentez</button>
+			{{form_end(commentForm)}}
+			{% else %}
+			<h3><a href="{{path('security_login')}}" class="">Cliquez ici </a>pour pouvoir commenter ce voyage !</h3>
+			
+
+			{% endif %}
+		</section>
+	</article>
+</div>
+
+
+{% endblock %}

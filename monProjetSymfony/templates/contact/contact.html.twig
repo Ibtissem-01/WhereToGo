@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+{% if app.user %}
+    <div class='container mt-md-5 mb-md-5 p-4 bg-white'> 
+		<div class='text-center mb-md-5'>
+			<h2 class='h2 mb-md-3'>Nous Contacter </h2>
+				<p> Vous avez des questions à nous poser? </br>
+					N'hésitez pas à nous contacter directement. </br>
+					Notre équipe reviendra vers vous dans quelques heures pour vous aider. </br>
+				</p>
+	    </div>
+    <form>
+        <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+            <input type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="{{app.user.email}}">
+        </div>
+        <label for="staticEmail" class="col-sm-2 col-form-label">Pseudo</label>
+        <div class="col-sm-10">
+            <input type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="{{app.user.username}}">
+        </div>
+        </div>
+        <div class="form-group">
+        <label for="exampleTextarea">Votre message </label>
+        <textarea class="form-control" id="exampleTextarea" required rows="5"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+{% else %}
+    <div class='text-center mb-md-5'>
+			<h2 class='h2 mb-md-3'>Nous Contacter ? </h2>
+				<p> Vous avez des questions à nous poser? </br>
+					<a href="{{path('security_login')}}">Connectez vous ici</a> pour accéder au formulaire de contact </br>
+				</p>
+	    </div>
+
+
+{% endif %}
+{% endblock %}

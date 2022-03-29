@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class='container mt-md-5 mb-md-5 p-4 bg-white'> 
+
+	<div class='text-center mb-md-5'>
+        <h1 class="h2 mb-md-3">Bienvenue sur WhereToGo !</h1>
+    </div>
+
+<div class="container py-4">
+ 	<div class='text-center mb-md-5'>
+
+    <div class="row align-items-md-stretch">
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+            <h2>Pour accedez à tous les voyages,<a href="{{path('voyages')}}">cliquez ici.</a></h2>
+        </div>
+      </div>
+      {% if  not app.user %}
+      <div class="col-md-6">
+        <div class="h-100 p-5 bg-light border rounded-3">
+            <h2>Pour partagez votre voyage, <a href="{{path('registration')}}">inscrivez vous ici.</a></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+</div>
+</div>
+{% endblock %}

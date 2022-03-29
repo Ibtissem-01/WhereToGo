@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{%  block body %}
+<h1 class="h2 mb-md-3"> Inscription ! </h1>
+
+    {{ form_start(form)}}
+
+    <div class="form-group">
+        <label for="">Email </label>
+        {{form_widget(form.email, {'attr' : {'placeholder' : "xx.xx@xxx.xx", 'required' : true}}) 
+        }}
+    </div>
+    <div class="form-group">
+        <label for="">Nom d'utilisateur</label>
+        {{form_widget(form.username, {'attr' : {'placeholder' : "nom d\'utilisateur", 'required' : true}}) 
+        }}
+    </div>
+    <div class="form-group">
+        <label for="">Mot de passe</label>
+        {{form_widget(form.password, {'attr' : {'placeholder' : "*******", 'required' : true}}) 
+        }}
+    </div>
+
+    <button type="submit" class="btn btn-success">Inscription !</button>
+    {{form_end(form)}}
+
+
+{% endblock %}

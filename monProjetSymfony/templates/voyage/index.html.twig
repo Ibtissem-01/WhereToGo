@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class='container mt-md-5 mb-md-5 p-4 bg-white'> 
+
+	<div class='text-center mb-md-5'>
+        <h1 class="h2 mb-md-3">Les voyages !</h1>
+    </div>
+ <div class="row mb-2">
+ 	{% for voyage in voyages %}
+
+	<div class="col-md-6">
+		<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+			<div class="col p-4 d-flex flex-column position-static">
+				<h3 class="mb-0">{{voyage.titre}}</h3>
+				<p>Ecrit le{{voyage.createdAt|date("d/m/Y") }}, par {{voyage.idUtilisateur}}</p> <!-- recuperer le pseudo de l'user -->
+				<p class="card-link"><a href="{{path('show_voyage',{'id':voyage.id})}}" class="btn btn-primary">Lire la suite</a></p>
+			</div>
+		</div>
+	</div>
+	{% endfor %}	
+  </div>
+</div>
+>{% endblock %}

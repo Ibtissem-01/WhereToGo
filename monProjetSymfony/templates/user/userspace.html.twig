@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class='container mt-md-5 mb-md-5 p-4 bg-white'> 
+	<div class='text-center mb-md-5'>
+	<h1 class='h2 mb-md-3'>Espace Personnelle</h1>
+		<ul class='container list-group list-group-flush'>
+			<li class='list-group-item row'>
+				<p class='col-sm-3 mb-0'>Prénom :</p>
+				<p class='col-sm-9 text-secondary'>{{app.user.username}}</p>
+			</li>
+			<li class='list-group-item row'>
+				<p class='col-sm-3 mb-0'>Email :</p>
+				<p class='col-sm-9 text-secondary'>{{app.user.email}}</p>
+			</li>
+		</ul>
+		<div class='text-center mb-md-5'>
+			<div class='list-group'>
+				<a class='list-group-item list-group-item-action' href='#"'>Mes voyages postés </a>
+				<a class='list-group-item list-group-item-action bg-danger text-white font-weight-bold' href='#'>Supprimer le compte</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
